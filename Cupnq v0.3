@@ -1,0 +1,90 @@
+print('CUPNQ v0.3')
+print('Short and PEP 8 Realise')
+
+print('')
+
+dos = input('Write "start" to start this programm or "info" to learn about programm or "exit" to exit: ')
+if dos == "start":                    
+
+    print('')
+
+    u = int(input('Write useful points: '))
+    if u == 1:
+        p = int(input('Write price points: '))
+
+        if p >= 1 and p <= 3:
+            n = int(input('Write need points: '))
+
+            if n == 0:
+                print("You don't need this thing. Why are you want to buy it?")
+                exit = input()
+
+            if n >= 1 and n <= 2:
+                q = int(input('Write quality points: '))
+
+                if q == 0:
+                    print("Quality of this thing didn't met requirments. Don't buy this thing")
+                    exit = input()
+
+                if q >= 1 and q <= 2:
+
+                    c = u * p * n * q
+
+                    print('This buying has got ' + str(c) + ' points' )
+
+                    if c == 12:
+                        print(' Why are you waiting? Buy this NOW!')
+                    if c == 6:    
+                        print('Buy it NOW!')
+                    if c == 4:
+                        print("You can buy this thing. It's good.")
+                    if c == 3:
+                        print("I think it isn't good buying. Please, search another thing to buy.")  
+                    if c == 2:
+                        print("Don't buy this. Please, search another thing to buy.")  
+                    elif c == 1:
+                        print("Don't buy this. Please, search another thing to buy.")
+                    exit = input()
+                
+                else:
+                    print('Error. Quality Points was only "0", "1" or "2"') 
+                    exit = input()
+
+            else:
+                print('Error. Need Points was only "0", "1" or "2"') 
+                exit = input()
+
+        else:
+            print('Error. Price was only "1", "2" or "3"')
+            exit = input()
+
+    if u == 0:
+        print("It's bad thing for you. Why are you want to buy this?")
+        exit = input()
+
+    else:
+        print('Error. Useful was only "0" or "1"') 
+        exit = input()
+
+if dos == "info":
+    print('')
+    print("Welcome to my first programm CUPNQ (Coefficient of Useful, Price, Need and Quality)! This programm will help you to make purchases better!   ")    
+    print ("Instructions")
+    print('This programm make analysis about purchases by points that you put to product. List of points that you can use:')
+    print("Useful    Price    Need    Quality")
+    print("   0          1       0        0")
+    print("   1          2       1        1")
+    print("   -          3       2        2")
+    print("")
+    print("Useful 0-product is unuseful; 1-product is useful")
+    print("Price 1-expensive; 2-normal; 3-cheap")
+    print("Need 0-You don,t need this purchase; 1-You need it; 2-You need it NOW! ")
+    print("Quality 0-Bad quality; 1-Normal quality; 2-High quality")
+    exit = input('')
+
+if dos == "exit":
+    exit = input('Press Enter to exit:')
+
+else:
+    print('Error. Write "start" to start this programm or "info" to learn about programm or "exit" to exit.')
+    exit = input('Press Enter to exit and restart programm: ')             
